@@ -1,5 +1,5 @@
 import pygame
-import random
+import random 
 
 """
 10 x 20 square grid
@@ -140,8 +140,7 @@ def create_grid(locked_position = {}):
       for i in range(len(grid)):
             for j in range(len(grid[i])):
                   if (j,i) in locked_position:
-                        c = locked_position[(j,i)]
-                        grid [i][j] = c
+                        grid [i][j]  = locked_position[(j,i)]
       return grid
 
 def get_shape():
@@ -190,6 +189,7 @@ def convert_shape_format(shape):
 
 
 def valid_space(shape, grid):
+      
       accepted_pos = [[(j,i) for j in range(10) if grid[i][j] == (0,0,0)] for i in range(20)]
       accepted_pos = [j for sub in accepted_pos for j in sub]
 
