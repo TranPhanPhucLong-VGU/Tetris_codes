@@ -161,7 +161,7 @@ def draw_window(surface, grid):
                    pygame.draw.rect(surface, (255,0,0),(top_left_x, top_left_y, play_width, play_height),4) 
 
     draw_grid(surface, grid)
-    pygame.display.update()
+#     pygame.display.update()
 
 def draw_grid(surface, grid):
       sx = top_left_x
@@ -245,6 +245,7 @@ def main(win):
                               if not (valid_space(current_piece, grid)):
                                     current_piece.x += 1
                              
+
                         if event.key == pygame.K_RIGHT:
                               current_piece.x += 1
                               if not (valid_space(current_piece, grid)):
@@ -278,7 +279,8 @@ def main(win):
 
 
 
-            draw_window(win, grid)       
+            draw_window(win, grid) 
+            pygame.display.update()      
 
             if check_lost(locked_positions):
                   run = False
